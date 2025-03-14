@@ -1,0 +1,78 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.858);
+}
+
+.tittle {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #12f3f3;
+}
+
+.lead {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+hr {
+    border: 1px solid #444;
+    margin: 20px 0;
+}
+
+/* Botones */
+.botton {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.botton a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-1 { background: #64ace0; color: #fff; }
+.btn-2 { background: #76e6a5; color: #fff; }
+.btn-3 { background: #eb54b9; color: #fff; }
+.btn-4 { background: #cd8ee6; color: #fff; }
+
+.botton a:hover {
+    opacity: 0.8;
+}
+.link {
+    color: #12f3f3; /* Cambia este código de color al que prefieras */
+    text-decoration: none; /* Opcional: elimina el subrayado */
+    font-weight: bold; /* Opcional: pone en negrita */
+}
+
+.link:hover {
+    color: #0aa1a1; /* Color cuando el usuario pasa el mouse */
+}
+

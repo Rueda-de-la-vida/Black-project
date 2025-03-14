@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>-::. SANXO INFORMATION TECHNOLOGIES S.A.S. .::.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylePersona.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="back-container">
+      <a href="/" class="back-icon">&#8592;</a> <!-- Flecha izquierda como icono -->
+  </div>
+    <h1 class="text-center">::: REGISTRO DE EMPLEADOS Y ENCUESTA :::</h1>
+    <p class="text-center">Complete los datos personales y responda la encuesta de la Rueda de la Vida.</p>
+    
+    <form method="post" action="/guardar_p">
+      <div class="mb-3">
+        <label for="id" class="form-label">Documento:</label>
+        <input type="text" class="form-control" id="id" name="id" required>
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="apellido" class="form-label">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" required>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo Electrónico:</label>
+        <input type="email" class="form-control" id="correo" name="correo" required>
+      </div>
+      <div class="mb-3">
+        <label for="departamento" class="form-label">Departamento:</label>
+        <input type="text" class="form-control" id="departamento" name="departamento" required>
+      </div>
+      
+      <h3 class="mt-4">Encuesta - Rueda de la Vida</h3>
+      <p class="p-2">Responda cada pregunta con un valor del 1 al 10.</p>
+      
+      {% for aspecto, preguntas in {
+        "Área Física": [
+            "¿Qué tan satisfecho estás con tu estado físico actual?",
+            "¿Qué tan saludable consideras tu alimentación diaria?",
+            "¿Qué tan constante eres con la actividad física o el ejercicio?",
+            "¿Qué tan buena es la calidad de tu sueño?",
+            "¿Qué tanto te sientes con energía y vitalidad en tu día a día?"
+        ],
+        "Área Personal": [
+            "¿Qué tan satisfecho estás con tu desarrollo y crecimiento personal?",
+            "¿Qué tan bien gestionas tus emociones y pensamientos?",
+            "¿Qué tan frecuente es que te propongas metas personales y las cumplas?",
+            "¿Qué tan cómodo te sientes saliendo de tu zona de confort?",
+            "¿Qué tanto sientes que estás en control de tu propia vida?"
+        ],
+        "Área Familiar": [
+            "¿Qué tan satisfecha(o) estás con tu relación con tu familia?",
+            "¿Qué tan buena consideras la comunicación con tus familiares?",
+            "¿Qué tan apoyado te sientes por tu familia en momentos difíciles?",
+            "¿Qué tanto tiempo de calidad pasas con tu familia?",
+            "¿Qué tan bien resuelves los conflictos familiares cuando ocurren?"
+        ],
+        "Área Económica": [
+            "¿Qué tan satisfecho estás con tu situación financiera actual?",
+            "¿Qué tan seguro te sientes respecto a tu estabilidad financiera futura?",
+            "¿Qué tan bien administras tus ingresos y gastos?",
+            "¿Qué tan libre de deudas estás o te sientes?",
+            "¿Qué tan capaz te sientes de ahorrar y planificar para el futuro?"
+        ],
+        "Área Profesional": [
+            "¿Qué tan satisfecho estás con tu carrera o actividad profesional actual?",
+            "¿Qué tan motivado te sientes en tu trabajo o estudios?",
+            "¿Qué tan alineado sientes tu trabajo con tus metas y valores?",
+            "¿Qué tan reconocido y valorado te sientes en tu entorno profesional?",
+            "¿Qué tan optimista estás sobre tu futuro profesional?"
+        ],
+        "Área Social": [
+            "¿Qué tan satisfecho estás con tu círculo social actual?",
+            "¿Qué tan conectado te sientes con tus amigos y conocidos?",
+            "¿Qué tan fácil te resulta hacer nuevas amistades o mantener las que tienes?",
+            "¿Qué tan apoyado te sientes por tu entorno social en momentos difíciles?",
+            "¿Qué tan frecuente es que participes en actividades sociales?"
+        ],
+        "Área de Ocio": [
+            "¿Qué tan satisfecho estás con el tiempo que dedicas a actividades de ocio?",
+            "¿Qué tan frecuente es que realices actividades que realmente disfrutas?",
+            "¿Qué tan equilibrado sientes tu tiempo entre trabajo/responsabilidades y diversión?",
+            "¿Qué tan a menudo descubres o exploras nuevos pasatiempos?",
+            "¿Qué tanto sientes que disfrutas la vida en el día a día?"
+        ],
+        "Área Espiritual": [
+            "¿Qué tan conectado te sientes con tus valores o creencias espirituales?",
+            "¿Qué tan en paz te sientes contigo mismo y con tu entorno?",
+            "¿Qué tan frecuente es que practiques actividades que te brinden paz interior (meditación, oración, reflexión)?",
+            "¿Qué tan alineada sientes tu vida con tu propósito o misión personal?",
+            "¿Qué tan satisfecho estás con tu nivel de gratitud y conexión con la vida?"
+        ]
+      }.items() %}
+      <h5>{{ aspecto }}</h5>
+      {% for pregunta in preguntas %}
+      <div class="mb-3">
+        <label class="form-label">{{ pregunta }}</label>
+        <input type="number" class="form-control" name="respuestas" min="1" max="10" required>
+      </div>
+      {% endfor %}
+      {% endfor %}
+      
+      <button type="submit" class="btn btn-primary w-100" name="accion" value="Guardar">Guardar</button>
+    </form>
+  </div>
+</body>
+</html>

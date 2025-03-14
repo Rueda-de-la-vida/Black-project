@@ -1,0 +1,75 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.886);
+}
+
+.tittle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #12f3f3;
+}
+
+.lead {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ffffff;
+    margin: 20px 0;
+}
+
+.mt-4, .botton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mt-4 a, .botton a {
+    text-decoration: none;
+    color: #121212;
+    background: #76e6a5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.mt-4 a:hover, .botton a:hover {
+    background: #76e6a5;
+}
+
+.back-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-icon {
+    font-size: 2rem;
+    color: #76e6a5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-icon:hover {
+    color: #76e6a5;
+}
